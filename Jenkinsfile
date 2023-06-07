@@ -23,7 +23,7 @@ pipeline {
         sh 'docker stop danya2 && docker rm danya2'
         sh "docker run --name danya2 -d -p 3000:3000 danyaabushameh/danya_q2:$BUILD_ID"
         sh 'sleep 15'
-        sh 'curl http://localhost:3000'
+        sh 'curl http://localhost:80'
       }
     }
 

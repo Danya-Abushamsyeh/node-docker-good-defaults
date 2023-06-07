@@ -20,12 +20,10 @@ pipeline {
 
     stage('Run & Test the Containers') {
       steps {
-        sh 'docker stop danya2 && docker rm danya2'
-        sh '''sudo lsof -i :80
-'''
         sh "docker run --name danya2 -d -p 80:80 danyaabushameh/danya_q2:$BUILD_ID"
-        sh 'sleep 15'
+        sh 'sleep 50'
         sh 'curl http://localhost:80'
+        sh 'docker stop danya2 && docker rm danya2'
       }
     }
 

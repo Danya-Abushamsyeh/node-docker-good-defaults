@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Danya-Abushamsyeh/node-docker-good-defaults.git']])
+        git(url: 'https://github.com/Danya-Abushamsyeh/node-docker-good-defaults.git', branch: 'main', changelog: true, poll: true)
       }
     }
 

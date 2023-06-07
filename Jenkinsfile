@@ -20,9 +20,9 @@ pipeline {
 
     stage('Run & Test the Containers') {
       steps {
-        sh 'docker run --name danya2 -d -p 3000:3000 danyaabushameh/danya_q2:$BUILD_ID'
+        sh 'docker run --name danya2 -d danyaabushameh/danya_q2:$BUILD_ID'
         sh 'sleep 5'
-        sh 'curl http://localhost:3000'
+        sh 'curl http://localhost:80'
       }
     }
 

@@ -14,7 +14,7 @@ pipeline {
 
     stage('Build Docker Images') {
       steps {
-        sh 'docker-compose build'
+        sh 'docker build -t danyaabushameh/danya_q2:$BUILD_ID .'
       }
     }
 
